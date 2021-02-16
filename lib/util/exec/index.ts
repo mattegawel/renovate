@@ -95,6 +95,7 @@ export async function exec(
 ): Promise<ExecResult> {
   const { env, docker, cwdFile } = opts;
   const extraEnv = { ...opts.extraEnv, ...getAdminConfig().customEnvVariables };
+  const customVolumes = getAdminConfig().customVolumes;
   let cwd;
   // istanbul ignore if
   if (cwdFile) {
@@ -127,6 +128,7 @@ export async function exec(
       ...docker,
       cwd,
       envVars: dockerEnvVars(extraEnv, childEnv),
+      volumes: customVolumes,
     };
 
     const dockerCommand = await generateDockerCommand(

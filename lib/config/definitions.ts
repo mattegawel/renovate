@@ -317,6 +317,13 @@ const options: RenovateOptions[] = [
     default: false,
   },
   {
+    name: 'customVolumes',
+    description: 'Custom volumes for sidecar Docker containers.',
+    admin: true,
+    type: 'array',
+    default: [],
+  },
+  {
     name: 'dockerMapDotfiles',
     description:
       'Map relevant home directory dotfiles into containers when binarySource=docker.',

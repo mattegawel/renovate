@@ -86,6 +86,7 @@ export interface RepoAdminConfig {
   allowPostUpgradeCommandTemplating?: boolean;
   allowedPostUpgradeCommands?: string[];
   customEnvVariables?: Record<string, string>;
+  customVolumes?: Array<string>;
   dockerImagePrefix?: string;
   dockerUser?: string;
   dryRun?: boolean;
