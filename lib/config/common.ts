@@ -1,6 +1,7 @@
 import { LogLevel } from 'bunyan';
 import { Range } from 'semver';
 import { HostRule } from '../types';
+import { VolumeOption } from '../util/exec/common';
 
 export type RenovateConfigStage =
   | 'global'
@@ -86,7 +87,7 @@ export interface RepoAdminConfig {
   allowPostUpgradeCommandTemplating?: boolean;
   allowedPostUpgradeCommands?: string[];
   customEnvVariables?: Record<string, string>;
-  customVolumes?: Array<string>;
+  customVolumes?: VolumeOption[];
   dockerImagePrefix?: string;
   dockerUser?: string;
   dryRun?: boolean;
